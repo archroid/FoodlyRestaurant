@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Foodly Restaurant</string>
+    <string name="hello_restaurant">Hello Restaurant!</string>
+    <string name="welcome">Foodly, Foods social media App</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="you_are_not_a_member_register">You are not a member? <b><font fgcolor='#f44336'>Register.</font></b></string>
+    <string name="already_registered">Already logged in? <b><font fgcolor='#f44336'>Login.</font></b></string>
+    <string name="nice_to_see_you">Nice to see you again!</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+
+    <string name="login_desc">Welcome to Foodly community</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="confirm">Confirm</string>
+</resources>

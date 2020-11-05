@@ -32,7 +32,6 @@ public class NetErrorActivtiy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net_error_activtiy);
 
-
         btn_retry = findViewById(R.id.btn_retry);
 
         iv_dnd = findViewById(R.id.iv_dnd);

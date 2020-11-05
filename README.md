@@ -12,7 +12,8 @@ Good luck!
 
 ## Screenshots
 
-[!](screenshots/1.png)
+<img src="screenshots/Screenshot_20201105_231706.png" width="300" height="600" />
+
 
 ## TODO
 - [x] Complete Auth

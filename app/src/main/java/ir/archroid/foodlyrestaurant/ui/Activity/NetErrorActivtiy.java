@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import ir.archroid.foodlyrestaurant.Data.Controller.TestNetworkController;
 import ir.archroid.foodlyrestaurant.Data.FoodlyApi;
 import ir.archroid.foodlyrestaurant.Helper.SnackBarHelper;
@@ -20,6 +22,7 @@ public class NetErrorActivtiy extends AppCompatActivity {
     private ImageView iv_dnd;
     private ImageView iv_wifi;
 
+
     private CoordinatorLayout coordinatorLayout;
 
     private static FoodlyApi.TestNetworkCallback testNetworkCallback;
@@ -29,17 +32,18 @@ public class NetErrorActivtiy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net_error_activtiy);
 
+
         btn_retry = findViewById(R.id.btn_retry);
 
         iv_dnd = findViewById(R.id.iv_dnd);
         iv_wifi = findViewById(R.id.iv_wifi);
         coordinatorLayout = findViewById(R.id.coordinator);
 
-        Animation animation3 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_1);
-        Animation animation4 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_2);
+        Animation animation1 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_1);
+        Animation animation2 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_2);
 
-        iv_dnd.startAnimation(animation3);
-        iv_wifi.startAnimation(animation4);
+        iv_dnd.startAnimation(animation1);
+        iv_wifi.startAnimation(animation2);
         btn_retry.setOnClickListener(view1 -> {
             testNetworkCallback = new FoodlyApi.TestNetworkCallback() {
                 @Override

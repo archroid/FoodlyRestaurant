@@ -9,6 +9,11 @@ Written in java usring android studio...
 Ready to hear your recommendation.
 Good luck!
 
+
+## Screenshots
+
+[!](screenshots/1.png)
+
 ## TODO
 - [x] Complete Auth
 - [ ] Submit new foods

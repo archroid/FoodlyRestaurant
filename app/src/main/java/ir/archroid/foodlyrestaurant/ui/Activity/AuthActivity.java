@@ -46,14 +46,14 @@ public class AuthActivity extends AppCompatActivity {
         btn_login.setOnClickListener(v -> {
             mainLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, registerFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, loginFragment).commit();
         });
 
 
         btn_switch.setOnClickListener(v -> {
             mainLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, loginFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, registerFragment).commit();
         });
 
 

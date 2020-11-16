@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.FoodlyRestaurant" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/currentLine</item>
         <item name="colorPrimaryVariant">@color/currentLine</item>
@@ -11,6 +12,8 @@
         <item name="colorOnSecondary">@color/foreground</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Nav bar color. -->
+        <item name="android:navigationBarColor">@color/currentLine</item>
+
     </style>
 </resources>

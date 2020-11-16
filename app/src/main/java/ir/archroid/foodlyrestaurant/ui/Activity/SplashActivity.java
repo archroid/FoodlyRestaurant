@@ -41,14 +41,14 @@ public class SplashActivity extends AppCompatActivity {
                     }
                     finish();
                 } else {
-                    startActivity(new Intent(SplashActivity.this, NetErrorActivtiy.class));
+                    startActivity(new Intent(SplashActivity.this, NetErrorActivity.class));
                     finish();
                 }
             }
 
             @Override
             public void onFailure(String cause) {
-                startActivity(new Intent(SplashActivity.this, NetErrorActivtiy.class));
+                startActivity(new Intent(SplashActivity.this, NetErrorActivity.class));
                 finish();
             }
         };

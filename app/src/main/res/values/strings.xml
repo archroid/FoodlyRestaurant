@@ -13,6 +13,7 @@
 
     <string name="login_desc">Welcome to Foodly community</string>
 
+    <string name="add_new_food">Add new food</string>
     <string name="username">Username</string>
     <string name="confirm">Confirm</string>
 </resources>

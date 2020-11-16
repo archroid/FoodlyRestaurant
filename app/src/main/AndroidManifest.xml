@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodlyRestaurant"
         tools:targetApi="n">
-        <activity android:name=".ui.Activity.NetErrorActivtiy"></activity>
+        <activity android:name=".ui.Activity.SubmitFoodActivity"></activity>
+        <activity android:name=".ui.Activity.NetErrorActivity" />
         <activity android:name=".ui.Activity.MainActivity" />
         <activity android:name=".ui.Activity.SplashActivity">
             <intent-filter>

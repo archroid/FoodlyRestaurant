@@ -15,7 +15,7 @@ import ir.archroid.foodlyrestaurant.Data.FoodlyApi;
 import ir.archroid.foodlyrestaurant.Helper.SnackBarHelper;
 import ir.archroid.foodlyrestaurant.R;
 
-public class NetErrorActivtiy extends AppCompatActivity {
+public class NetErrorActivity extends AppCompatActivity {
 
     private AppCompatButton btn_retry;
 
@@ -30,7 +30,7 @@ public class NetErrorActivtiy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_net_error_activtiy);
+        setContentView(R.layout.activity_net_error);
 
         btn_retry = findViewById(R.id.btn_retry);
 
@@ -38,8 +38,8 @@ public class NetErrorActivtiy extends AppCompatActivity {
         iv_wifi = findViewById(R.id.iv_wifi);
         coordinatorLayout = findViewById(R.id.coordinator);
 
-        Animation animation1 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_1);
-        Animation animation2 = AnimationUtils.loadAnimation(NetErrorActivtiy.this, R.anim.wave_2);
+        Animation animation1 = AnimationUtils.loadAnimation(NetErrorActivity.this, R.anim.wave_1);
+        Animation animation2 = AnimationUtils.loadAnimation(NetErrorActivity.this, R.anim.wave_2);
 
         iv_dnd.startAnimation(animation1);
         iv_wifi.startAnimation(animation2);
@@ -48,15 +48,15 @@ public class NetErrorActivtiy extends AppCompatActivity {
                 @Override
                 public void onResponse(Boolean isSuccessful) {
                     if (isSuccessful) {
-                        startActivity(new Intent(NetErrorActivtiy.this, MainActivity.class));
+                        startActivity(new Intent(NetErrorActivity.this, MainActivity.class));
                     } else {
-                        SnackBarHelper.alert(NetErrorActivtiy.this, coordinatorLayout, "Failed!");
+                        SnackBarHelper.alert(NetErrorActivity.this, coordinatorLayout, "Failed!");
                     }
                 }
 
                 @Override
                 public void onFailure(String cause) {
-                    SnackBarHelper.alert(NetErrorActivtiy.this, coordinatorLayout, "Failed!");
+                    SnackBarHelper.alert(NetErrorActivity.this, coordinatorLayout, "Failed!");
                 }
             };
 

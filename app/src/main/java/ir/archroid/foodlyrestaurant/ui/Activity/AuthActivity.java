@@ -9,10 +9,13 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import ir.archroid.foodlyrestaurant.R;
@@ -21,13 +24,12 @@ import ir.archroid.foodlyrestaurant.ui.Fragment.RegisterFragment;
 
 public class AuthActivity extends AppCompatActivity {
 
-    private RelativeLayout mainLayout;
+    private AppCompatButton btn_login, btn_register;
+    private ImageView iv_pizza;
+
     private FrameLayout frameLayout;
+    private ConstraintLayout constraintLayout;
 
-    private TextView hello_restaurant;
-
-    private RelativeLayout btn_login;
-    private TextView btn_switch;
 
     private final RegisterFragment registerFragment = new RegisterFragment();
     private final LoginFragment loginFragment = new LoginFragment();
@@ -38,47 +40,47 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        hello_restaurant = findViewById(R.id.hello_restaurant);
+        btn_login = findViewById(R.id.btn_login);
+        btn_register = findViewById(R.id.btn_register);
+
+        iv_pizza = findViewById(R.id.iv_pizza);
+
+        frameLayout = findViewById(R.id.frameLayout);
+        constraintLayout = findViewById(R.id.constraintLayout);
 
         Animation animation1 = AnimationUtils.loadAnimation(AuthActivity.this, R.anim.wave_2);
-        hello_restaurant.setAnimation(animation1);
+        iv_pizza.setAnimation(animation1);
 
-        mainLayout = findViewById(R.id.MainLayout);
-        frameLayout = findViewById(R.id.frameLayout);
-        btn_login = findViewById(R.id.login_button);
-        btn_switch = findViewById(R.id.btn_switch);
 
-        mainLayout.setVisibility(View.VISIBLE);
+        constraintLayout.setVisibility(View.VISIBLE);
         frameLayout.setVisibility(View.GONE);
 
 
         btn_login.setOnClickListener(v -> {
             Animation animation = AnimationUtils.loadAnimation(AuthActivity.this, R.anim.fade_out);
-            mainLayout.setAnimation(animation);
-            mainLayout.setVisibility(View.GONE);
+            constraintLayout.setAnimation(animation);
+            constraintLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
             getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(
                             R.anim.fade_in,
                             R.anim.fade_out
-//                            R.anim.fade_in,
-//                            R.anim.slide_out_right
                     )
                     .replace(R.id.frameLayout, registerFragment).addToBackStack("a").commit();
         });
 
 
-        btn_switch.setOnClickListener(v -> {
+        btn_register.setOnClickListener(v -> {
             Animation animation = AnimationUtils.loadAnimation(AuthActivity.this, R.anim.fade_out);
-            mainLayout.setAnimation(animation);
-            mainLayout.setVisibility(View.GONE);
+            constraintLayout.setAnimation(animation);
+
+            constraintLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
+
             getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(
                             R.anim.fade_in,
                             R.anim.fade_out
-//                            R.anim.fade_in,
-//                            R.anim.slide_out_right
                     )
                     .replace(R.id.frameLayout, registerFragment).addToBackStack("a").commit();
         });
@@ -106,13 +108,11 @@ public class AuthActivity extends AppCompatActivity {
     private final BroadcastReceiver LoginBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            mainLayout.setVisibility(View.GONE);
+            constraintLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
             getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(
                             R.anim.slide_in_left,
-//                            R.anim.fade_out,
-//                            R.anim.fade_in,
                             R.anim.slide_out_left
                     )
                     .replace(R.id.frameLayout, loginFragment).commit();
@@ -122,13 +122,11 @@ public class AuthActivity extends AppCompatActivity {
     private final BroadcastReceiver RegisterBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            mainLayout.setVisibility(View.GONE);
+            constraintLayout.setVisibility(View.GONE);
             frameLayout.setVisibility(View.VISIBLE);
             getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(
                             R.anim.slide_in_right,
-//                            R.anim.fade_out,
-//                            R.anim.fade_in,
                             R.anim.slide_out_right
                     )
                     .replace(R.id.frameLayout, registerFragment).commit();
@@ -150,8 +148,8 @@ public class AuthActivity extends AppCompatActivity {
         frameLayout.setAnimation(animation);
         frameLayout.setVisibility(View.GONE);
         Animation animation2 = AnimationUtils.loadAnimation(AuthActivity.this, R.anim.fade_in);
-        mainLayout.setAnimation(animation2);
-        mainLayout.setVisibility(View.VISIBLE);
+        constraintLayout.setAnimation(animation2);
+        constraintLayout.setVisibility(View.VISIBLE);
 
         try {
             getSupportFragmentManager().beginTransaction().remove(registerFragment).commit();

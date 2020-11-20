@@ -1,7 +1,7 @@
 <resources>
+
     <string name="app_name">Foodly Restaurant</string>
-    <string name="hello_restaurant">Hello Restaurant!</string>
-    <string name="welcome">Foodly, Foods social media App</string>
+    <string name="welcome">Hey there! Ready to earn<b> money?</b></string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="you_are_not_a_member_register">You are not a member? <b><font fgcolor='#f44336'>Register.</font></b></string>
@@ -13,7 +13,9 @@
 
     <string name="login_desc">Welcome to Foodly community</string>
 
+
     <string name="add_new_food">Add new food</string>
     <string name="username">Username</string>
     <string name="confirm">Confirm</string>
+    <string name="let_s_go">Let\'s Go</string>
 </resources>

@@ -28,6 +28,8 @@
     <color name="blue">#365FF4</color>
     <color name="purple">#b294bb</color>
 
+    <color name="bg_yellow">#f7c206</color>
+
 
     <color name="colorDivider">#E6E6E6</color>
     <color name="colorItemDefaultBackground">#FFFFFF</color>

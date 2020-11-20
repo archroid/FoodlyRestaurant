@@ -9,8 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface FoodlyApi {
-    String BASE_URL = "http://10.0.2.2:5000/";
-//    String BASE_URL = "http://192.168.1.101:5000/";
+    String BASE_URL = "http://193.111.235.38/";
 
 
     @GET("ping")

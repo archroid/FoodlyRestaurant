@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
@@ -60,10 +61,13 @@ public class LoginFragment extends Fragment {
             username = et_username.getText().toString();
             password = et_password.getText().toString();
 
+
             LoginUserController loginUserController = new LoginUserController(loginUserCallback);
 
             if (isValid()){
                 loginUserController.start(username, password);
+                Toast.makeText(getContext(), "login", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -72,7 +76,6 @@ public class LoginFragment extends Fragment {
         loginUserCallback = new FoodlyApi.LoginUserCallback() {
             @Override
             public void onResponse(Boolean isSuccessful, String errorMSG, Token token) {
-
                 if (isSuccessful) {
                     MyPreferenceManager.getInstance(getActivity()).putAccessToken(token.getToken());
                     MyPreferenceManager.getInstance(getActivity()).putUsername(username);

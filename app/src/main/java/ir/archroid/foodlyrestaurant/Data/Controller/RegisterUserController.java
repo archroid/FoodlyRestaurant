@@ -18,13 +18,13 @@ public class RegisterUserController {
         this.registerUserCallback = registerUserCallback;
     }
 
-    public void start(String username, String password, String email, String role, String city) {
+    public void start(String username, String password, String city, String kind, String address, String name, String desc ) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(FoodlyApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         FoodlyApi foodlyApi = retrofit.create(FoodlyApi.class);
-        Call<Token> call = foodlyApi.registerUser(username, password, email, role, city);
+        Call<Token> call = foodlyApi.registerUser(username, password,city, kind, address, name, desc );
         call.enqueue(new Callback<Token>() {
             @Override
             public void onResponse(Call<Token> call, Response<Token> response) {

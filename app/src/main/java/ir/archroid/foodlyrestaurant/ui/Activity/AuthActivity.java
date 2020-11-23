@@ -66,7 +66,8 @@ public class AuthActivity extends AppCompatActivity {
                             R.anim.fade_in,
                             R.anim.fade_out
                     )
-                    .replace(R.id.frameLayout, registerFragment).addToBackStack("a").commit();
+                    .replace(R.id.frameLayout, loginFragment).addToBackStack("a").commit();
+
         });
 
 

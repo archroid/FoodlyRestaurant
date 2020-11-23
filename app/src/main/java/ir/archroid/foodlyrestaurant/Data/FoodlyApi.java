@@ -17,18 +17,20 @@ public interface FoodlyApi {
 
     // Register API
     @FormUrlEncoded
-    @POST("register")
+    @POST("/register/restaurant")
     Call<Token> registerUser(
             @Field("username") String username,
             @Field("password") String password,
-            @Field("email") String email,
-            @Field("role") String role,
-            @Field("city") String city
+            @Field("city") String city,
+            @Field("kind") String kind,
+            @Field("address") String address,
+            @Field("name") String name,
+            @Field("desc") String desc
     );
 
     // Login API
     @FormUrlEncoded
-    @POST("login")
+    @POST("login/restaurant")
     Call<Token> loginUser(
             @Field("username") String username,
             @Field("password") String password

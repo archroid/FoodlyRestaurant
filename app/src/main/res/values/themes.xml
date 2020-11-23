@@ -14,4 +14,10 @@
         <item name="fontFamily">@font/ubuntu</item>
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="AuthActivityTheme" parent="Theme.FoodlyRestaurant">
+        <item name="android:statusBarColor">@color/bg_yellow</item>
+        <item name="android:navigationBarColor">@color/bg_yellow</item>
+        <item name="android:isLightTheme" tools:targetApi="q">true</item>
+    </style>
 </resources>

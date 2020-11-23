@@ -69,8 +69,8 @@ public class RegisterFragment extends Fragment {
                         username,
                         password,
                         email,
-                        "customer",
-                        "Isfahan"
+    
+
                 );
             }
 
